@@ -1,0 +1,52 @@
+.book-card {
+    color: #333;
+    margin-top: 20px;
+    &__column {
+        display: flex;
+        max-width: 1200px;  
+        margin: 0 auto;
+        gap: 20px;
+        @media(max-width: 777px) {
+            flex-direction: column;
+        }
+    }
+
+    &__image {
+        padding: 20px;
+        background-color: rgba(171, 171, 171, 0.4);
+        flex: 1 1 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            width: 300px;
+            max-height: 500px;
+        };
+    }
+
+    &__about {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        gap: 20px;
+        flex: 1 1 50%;
+    }
+
+    &__categories {}
+
+    &__title {
+        font-weight: 800;
+    }
+
+    &__authors {
+        color: rgb(104, 104, 104);
+    }
+
+    &__description {
+        font-size: 16px;
+        border: 1px solid rgb(172, 172, 172);
+        padding: 20px;
+        font-weight: 600;
+        line-height: 130%;
+    }
+}

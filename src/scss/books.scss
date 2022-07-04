@@ -1,0 +1,18 @@
+.books {
+    color: #333;
+    max-width: 1000px;
+    margin: 0 auto;
+    &_total {
+        margin: 20px 0;
+        text-align: center;
+        font-weight: 700;
+    }
+
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+        @media(max-width: 960px) {
+            justify-content: center;
+        }
+    }
+}
