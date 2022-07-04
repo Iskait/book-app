@@ -1,0 +1,53 @@
+.header {
+    background-color: rgb(48, 42, 42);
+
+    &__container {}
+
+    &__column {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__title {
+        font-size: 24px;
+    }
+
+    &__input {
+        margin: 20px 0;
+        position: relative;
+        display: flex;
+        align-items: center;
+        input {
+            outline: none;
+            height: 25px;
+            width: 300px;
+            padding: 0 25px 0 5px;
+        }
+    }
+    &__search {
+        position: absolute;
+        right: 5px;
+        cursor: pointer;
+    }
+    &__sort {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+
+    }
+    &__categories {
+        display: flex;
+        flex-direction: column;
+    }
+    &__category-names {
+        margin-right: 10px;
+        &::after {
+            content: ':';
+        }
+    }
+    
+}
+
+
