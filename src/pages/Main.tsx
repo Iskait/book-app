@@ -1,19 +1,18 @@
 import Books from "../components/Books";
 import Footer from "../components/Footer";
-import { useSelector } from "react-redux";
-import loadingGif from "../img/GeneralUnpleasantApisdorsatalaboriosa-size_restricted.gif";
+import useAppSelector from "../hooks/useAppSelector";
+import loadingGif from "../assets/loading.gif";
 
 function Main() {
-  const { status } = useSelector((state) => state.books);
-
+  const { status, items } = useAppSelector((state) => state.books);
   return (
     <>
-      {status === "pending" && (
+      {status === "pending" && !items.length && (
         <div className="data-pending _container">
           <img src={loadingGif} alt="loading-data" />
         </div>
       )}
-      {status === "success" && (
+      {(status === "success" || items.length) && (
         <main className="page">
           <Books />
           <Footer />
