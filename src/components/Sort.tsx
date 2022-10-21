@@ -1,7 +1,7 @@
-import { filterByCategory, sortBy } from '../redux/slices/booksSlice';
-import { useDispatch } from 'react-redux';
+import useActions from "../hooks/useActions";
+
 function Sort() {
-  const dispatch = useDispatch();
+  const { filterByCategory, sortBy } = useActions();
   const option = [
     "all",
     "art",
@@ -16,11 +16,14 @@ function Sort() {
     <div className="header__sort">
       <div className="header__categories">
         <span className="header__category-names">Categories</span>
-        <select name="categories"
-        onChange={(e) => { 
-          const category = e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1);
-          dispatch(filterByCategory({category}))
-        }}>
+        <select
+          name="categories"
+          onChange={(e) => {
+            const category =
+              e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1);
+            filterByCategory(category);
+          }}
+        >
           {option.map((category, idx) => (
             <option key={idx + category} value={category}>
               {category}
@@ -30,8 +33,7 @@ function Sort() {
       </div>
       <div className="header__categories">
         <span className="header__category-names">Sorting by</span>
-        <select name="sortingBy"
-        onChange={(e) => dispatch(sortBy({sorting: e.target.value}))}>
+        <select name="sortingBy" onChange={(e) => sortBy(e.target.value)}>
           {sortingBy.map((sort, idx) => (
             <option key={idx + sort} value={sort}>
               {sort}
