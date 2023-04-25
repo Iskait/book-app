@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
-import { API_KEY, url } from "../../exports/constants";
 import BooksState from "../../types/BooksState";
 import ApiResponse from "../../types/ApiResponse";
 import { RootState } from "../";
@@ -9,10 +8,10 @@ export const fetchBooks = createAsyncThunk(
   "books/fetchBooks",
   async (_, { getState }) => {
     const { input, books } = getState() as RootState;
-    const { data } = await axios.get<ApiResponse>(url, {
+    const { data } = await axios.get<ApiResponse>(import.meta.env.VITE_URL, {
       params: {
         q: input,
-        key: API_KEY,
+        key: import.meta.env.VITE_API_KEY,
         orderBy: books.sorting,
         startIndex: books.items.length,
         maxResults: 30,
