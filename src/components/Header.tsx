@@ -1,14 +1,11 @@
 import Sort from "./Sort";
 import searchIcon from "../assets/search.svg";
 import useAppSelector from "../hooks/useAppSelector";
-import { useLocation, useNavigate } from "react-router-dom";
 import useActions from "../hooks/useActions";
 
 function Header() {
   const { fetchBooks, setInput, clearItems } = useActions();
   const search = useAppSelector((state) => state.input);
-  const location = useLocation();
-  const navigate = useNavigate();
   const handleEnterKey = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       return handleSearch();
