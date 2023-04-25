@@ -53,7 +53,6 @@ const booksSlice = createSlice({
         state.status = "success";
         state.totalItems = action.payload.totalItems;
         state.items.push(...action.payload.items);
-        console.log(action.payload);
       })
       .addCase(fetchBooks.rejected, (state) => {
         state.status = "reject";

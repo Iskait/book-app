@@ -1,43 +1,45 @@
 * {
-    margin: 0;
-    padding: 0;
-    border: none;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6, a {
-    color: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    text-decoration: none;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  text-decoration: none;
 }
 #root {
-    height: 100vh;
-    width: 100vw;
-    font-family: Arial, Verdana, Geneva, Tahoma, sans-serif;
-    color: #fff;
-    font-size: 18px;
+  height: 100vh;
+  width: 100vw;
+  font-family: Arial, Verdana, Geneva, Tahoma, sans-serif;
+  color: #fff;
+  font-size: 18px;
 }
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
-    width: 100%;
-    overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
 ._container {
-    max-width: 760px;
-    margin: 0 auto;
+  max-width: 760px;
+  margin: 0 auto;
 }
 .data-reject {
-    font-size: 20px;
-    color: #333;
-    margin-top: 20px;
+  font-size: 20px;
+  color: #333;
+  margin-top: 20px;
 }
 
-@import url(./header.scss);
-@import url(./card.scss);
-@import url(./books.scss);
-@import url(./footer.scss);
-@import url(./bookcard.scss);
+@import "header", "card", "books", "footer", "bookcard";
